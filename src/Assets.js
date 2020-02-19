@@ -12,9 +12,7 @@ const Assets=()=>{
                 individId: 2,
                 categoryId: 1,
                 assetName: 'Laptopp',
-                description: 'laptopp',
-                assetCondition: 'daarleg'
-
+                description: 'laptopp'
             })
         })
         .then((Response) => Response.json())

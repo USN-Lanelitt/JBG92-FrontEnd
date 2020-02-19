@@ -41,7 +41,7 @@ const LogginForm = () => {
         console.log(setPasswordRegVar);
 
         if (setUsernameRegVar.length > 0 || setPasswordRegVar.length > 0) {
-            alert(setUsernameRegVar);
+
             fetch("/api/register", {
                 method: 'post',
                 headers: {
@@ -52,7 +52,11 @@ const LogginForm = () => {
                     username: setUsernameRegVar,
                     password: setPasswordRegVar
                 })
-            });
+            })
+                .then((Response) => Response.json())
+                .then((Result) => {
+                    alert(Result);
+                })
         }
         else{
             alert("Alle felt må være fylt inn");
